@@ -57,11 +57,12 @@ class handler(BaseHTTPRequestHandler):
                         is_home = (home.get('id') == TEAM_ID)
                         
                         if is_home:
-                            summary = f"vs. {away_abbr}"
-                            location = "T-Mobile Park"
+                            summary = f"⚾️ vs. {away_abbr}"
+                            venue = teams.get('home', {}).get('venue', {}).get('name', 'Home')
+                            location = f"{venue}, {home_name}"
                             desc = f"Mariners vs {away_name}"
                         else:
-                            summary = f"@ {home_abbr}"
+                            summary = f"⚾️ @ {home_abbr}"
                             venue = teams.get('home', {}).get('venue', {}).get('name', 'Away')
                             location = f"{venue}, {home_name}"
                             desc = f"Mariners @ {home_name}"
