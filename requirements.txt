@@ -1,0 +1,4 @@
+flask
+requests
+icalendar
+python-dateutil
